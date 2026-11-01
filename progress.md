@@ -61,5 +61,5 @@ Bu belge, **ParsLinux 26.04 LTS (Noble Pars) Canlı ISO Üretim Altyapısı (`li
 ---
 
 ## 🔮 Sıradaki Adımlar (Master Fork Planı)
-- [ ] Hazırlanan `.deb` paketlerinin yerel depoda toplanması (Aşama 4: APT Repo).
+- [x] Hazırlanan `.deb` paketlerinin GitHub Pages resmi APT deposunda toplanması ve doğrulanması (`https://parslinux.github.io/apt_repo`).
 - [ ] `docker-build.sh` veya `build.sh` ile ilk `ParsLinux-26.04-gnome-amd64.iso` kalıbının derlenmesi ve test edilmesi.
