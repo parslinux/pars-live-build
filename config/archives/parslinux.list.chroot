@@ -3,7 +3,8 @@
 # ==============================================================================
 
 # 1. ParsLinux Resmi GitHub Pages APT Deposu (Aktif ve CDN Destekli)
-deb [trusted=yes] https://parslinux.github.io/apt_repo bookworm main
+deb [trusted=yes] https://parslinux.github.io/apt_repo 0.1 main
+# deb [trusted=yes] https://parslinux.github.io/apt_repo bookworm main
 
 # 2. ParsLinux Özel Domain Deposu (repo.parslinux.org DNS yönlendirildiğinde)
 # deb [trusted=yes] https://repo.parslinux.org/parslinux bookworm main contrib non-free
