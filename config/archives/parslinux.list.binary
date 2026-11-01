@@ -3,5 +3,5 @@
 # Canlı sistem açıldığında /etc/apt/sources.list.d/ içine bu liste yerleşir
 # ==============================================================================
 
-deb https://repo.parslinux.org/parslinux bookworm main contrib non-free
-# deb-src https://repo.parslinux.org/parslinux bookworm main contrib non-free
+deb [trusted=yes] https://parslinux.github.io/apt_repo bookworm main
+# deb https://repo.parslinux.org/parslinux bookworm main contrib non-free

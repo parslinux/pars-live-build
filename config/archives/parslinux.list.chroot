@@ -2,9 +2,11 @@
 # ParsLinux Resmi ve Yerel APT Paket Deposu Tanımı (Chroot Aşaması)
 # ==============================================================================
 
-# 1. ParsLinux Resmi APT Deposu (Varsayılan)
-deb [trusted=yes] https://repo.parslinux.org/parslinux bookworm main contrib non-free
+# 1. ParsLinux Resmi GitHub Pages APT Deposu (Aktif ve CDN Destekli)
+deb [trusted=yes] https://parslinux.github.io/apt_repo bookworm main
 
-# 2. Yerel / Ağ Geliştirme Deposu (apt_dopo / repo_depo çalıştırıldığında)
-# deb [trusted=yes] http://127.0.0.1:8080/parslinux bookworm main
-# deb [trusted=yes] file:/packages/repo bookworm main
+# 2. ParsLinux Özel Domain Deposu (repo.parslinux.org DNS yönlendirildiğinde)
+# deb [trusted=yes] https://repo.parslinux.org/parslinux bookworm main contrib non-free
+
+# 3. Yerel / Ağ Geliştirme Deposu (apt_dopo yerel çalıştırıldığında)
+# deb [trusted=yes] http://127.0.0.1:8080/ bookworm main
