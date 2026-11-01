@@ -47,7 +47,7 @@ fi
 echo -e "\n${BLUE}>> İzole Debian Bookworm ortamı başlatılıyor ve live-build yürütülüyor...${NC}"
 echo -e "${YELLOW}>> Not: Chroot ve loop aygıtı bağlama (mount) işlemleri için konteyner '--privileged' modda çalışacaktır.${NC}\n"
 
-$CONTAINER_ENGINE run --rm -it \
+$CONTAINER_ENGINE run --rm \
     --privileged \
     -v "$SCRIPT_DIR":/workspace \
     -w /workspace \
