@@ -1,0 +1,44 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux Chroot Kancası (Hook): 0100-parslinux-branding.hook.chroot
+# Görsel kimlik, gsettings şemaları, ikon önbellekleri ve initramfs yapılandırması
+# ==============================================================================
+
+echo ">> [ParsLinux Hook] 0100: Markalama ve şemalar derleniyor..."
+
+# 1. GSettings Şemalarını Derle
+if [ -d /usr/share/glib-2.0/schemas ]; then
+    glib-compile-schemas /usr/share/glib-2.0/schemas || true
+fi
+
+# 2. İkon Önbelleklerini Güncelle
+if command -v gtk-update-icon-cache >/dev/null 2>&1; then
+    for theme_dir in /usr/share/icons/*; do
+        if [ -d "$theme_dir" ] && [ -f "$theme_dir/index.theme" ]; then
+            gtk-update-icon-cache -q -f "$theme_dir" || true
+        fi
+    done
+fi
+
+# 3. Masaüstü Uygulama Veritabanını Güncelle
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database /usr/share/applications || true
+fi
+
+# 4. Plymouth Açılış Temasını Ayarla
+if command -v plymouth-set-default-theme >/dev/null 2>&1; then
+    if [ -d /usr/share/plymouth/themes/parslinux ]; then
+        plymouth-set-default-theme parslinux || true
+    elif [ -d /usr/share/plymouth/themes/spinner ]; then
+        plymouth-set-default-theme spinner || true
+    fi
+fi
+
+# 5. Initramfs İmajlarını Güncelle
+if command -v update-initramfs >/dev/null 2>&1; then
+    update-initramfs -u -k all || true
+fi
+
+echo ">> [ParsLinux Hook] 0100: Markalama yapılandırması tamamlandı."

@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux Chroot Kancası (Hook): 0300-parslinux-services.hook.chroot
+# Canlı sistem servislerinin etkinleştirilmesi ve uyku engellemeleri
+# ==============================================================================
+
+echo ">> [ParsLinux Hook] 0300: Sistem servisleri ayarlanıyor..."
+
+# 1. Temel Ağ ve Masaüstü Servislerini Etkinleştir
+systemctl enable NetworkManager.service || true
+systemctl enable gdm3.service || true
+systemctl enable bluetooth.service || true
+
+# 2. Canlı USB Testi ve Kurulum Esnasında Uyku/Askıya Almayı Engelle
+# Kullanıcı kurulum yaparken ekranın kilitlenmesini veya sistemin uyumasını önler
+systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target || true
+
+echo ">> [ParsLinux Hook] 0300: Servis ayarları tamamlandı."

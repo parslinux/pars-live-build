@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux live-build auto/clean betiği
+# Canlı ISO derleme kalıntılarını, chroot ve binary artıklarını temizler
+# ==============================================================================
+
+echo ">> [ParsLinux] live-build çalışma dizini temizleniyor..."
+
+# live-build dahili temizleme çağrısı
+lb clean noauto "${@}"
+
+# auto/config tarafından üretilen konfigürasyon dosyalarını sıfırla
+rm -f config/binary \
+      config/bootstrap \
+      config/chroot \
+      config/common \
+      config/source
+
+# Geçici günlük ve kilit dosyalarını temizle
+rm -f build.log \
+      .build_lock
+
+echo ">> [ParsLinux] Temizleme tamamlandı."

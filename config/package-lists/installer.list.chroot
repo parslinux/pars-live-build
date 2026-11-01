@@ -1,0 +1,25 @@
+# ==============================================================================
+# ParsLinux Canlı Sistem - Kurulum Sihirbazı Bağımlılıkları & Önyükleyici Araçları
+# ==============================================================================
+
+# Python 3 ve GTK4 / Libadwaita / PyCairo Çalışma Zamanı
+python3
+python3-gi
+python3-gi-cairo
+python3-psutil
+gir1.2-gtk-4.0
+gir1.2-adw-1
+gir1.2-gtk-3.0
+gir1.2-gdkpixbuf-2.0
+gir1.2-glib-2.0
+
+# Hedef Disk Bölümleme, Dosya Sistemi Oluşturma ve fstab Üretimi
+arch-install-scripts
+efibootmgr
+grub-efi-amd64
+grub-efi-amd64-bin
+grub-pc-bin
+os-prober
+cryptsetup
+lvm2
+mdadm

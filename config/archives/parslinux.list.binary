@@ -1,0 +1,7 @@
+# ==============================================================================
+# ParsLinux Resmi ve Yerel APT Paket Deposu Tanımı (Binary / Canlı Sistem İçi)
+# Canlı sistem açıldığında /etc/apt/sources.list.d/ içine bu liste yerleşir
+# ==============================================================================
+
+deb https://repo.parslinux.org/parslinux bookworm main contrib non-free
+# deb-src https://repo.parslinux.org/parslinux bookworm main contrib non-free

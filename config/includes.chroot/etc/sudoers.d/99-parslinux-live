@@ -1,0 +1,2 @@
+# ParsLinux Canlı Oturum Şifresiz Sudo İzni
+pars ALL=(ALL:ALL) NOPASSWD: ALL

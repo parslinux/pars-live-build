@@ -1,0 +1,30 @@
+# ==============================================================================
+# ParsLinux Canlı Sistem - ParsLinux GNOME Meta Paketi ve Çekirdek Bileşenleri
+# Bu liste doğrudan 'pars-desktop-gnome' meta paketine ve sistem uygulamalarına bağlıdır.
+# ==============================================================================
+
+# ParsLinux Ana Masaüstü Meta Paketi (Sistem İskeleti)
+pars-desktop-gnome
+pars-base
+pars-branding
+
+# ParsLinux Özel GNOME Arayüz ve Sistem Yapılandırmaları
+parslinux-gnome-settings
+parslinux-gnome-greeter
+parslinux-about
+parslinux-mycomputer
+parslinux-shortcuts
+parslinux-menus
+parslinux-grub-theme
+
+# ParsLinux Sistem Yönetim ve Donanım Araçları
+pars-update
+parslinux-software
+parslinux-imagewriter
+parslinux-formatter
+parslinux-package-installer
+parslinux-boot-repair
+parslinux-nvidia-installer
+
+# ParsLinux Yeni Nesil Canlı Kurulum Sihirbazı
+pars-setup

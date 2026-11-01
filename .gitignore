@@ -1,0 +1,23 @@
+# live-build geçici ve derleme dizinleri
+.build/
+chroot/
+binary/
+cache/
+
+# Kalıp ve Günlük Dosyaları
+*.iso
+*.hybrid.iso
+*.img
+*.log
+build.log
+
+# Yerel paketler (README.txt korunur)
+config/packages.chroot/*.deb
+!config/packages.chroot/README.txt
+
+# Sistem ve Editör kalıntıları
+*~
+.directory
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux Chroot Kancası (Hook): 0200-parslinux-live-user.hook.chroot
+# Canlı oturum kullanıcısı, masaüstü kısayolları ve yetkileri
+# ==============================================================================
+
+echo ">> [ParsLinux Hook] 0200: Canlı oturum kullanıcı profili yapılandırılıyor..."
+
+# 1. /etc/skel/Desktop dizini ve izinleri
+mkdir -p /etc/skel/Desktop
+
+if [ -f /usr/share/applications/org.parslinux.setup.desktop ]; then
+    cp -f /usr/share/applications/org.parslinux.setup.desktop /etc/skel/Desktop/
+elif [ -f /usr/share/applications/calamares.desktop ]; then
+    cp -f /usr/share/applications/calamares.desktop /etc/skel/Desktop/org.parslinux.setup.desktop
+fi
+
+# Masaüstü kısayollarını çalıştırılabilir yap
+chmod -f 755 /etc/skel/Desktop/*.desktop || true
+
+# 2. XDG Kullanıcı Dizinleri Şablonu
+if command -v xdg-user-dirs-update >/dev/null 2>&1; then
+    xdg-user-dirs-update || true
+fi
+
+echo ">> [ParsLinux Hook] 0200: Canlı kullanıcı profili hazırlandı."

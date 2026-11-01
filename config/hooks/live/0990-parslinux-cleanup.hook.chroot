@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux Chroot Kancası (Hook): 0990-parslinux-cleanup.hook.chroot
+# Canlı ISO boyutunu küçültmek için geçici paket ve önbellek temizliği
+# ==============================================================================
+
+echo ">> [ParsLinux Hook] 0990: Canlı sistem temizliği yapılıyor..."
+
+# 1. APT Önbelleğini Boşalt
+apt-get clean || true
+apt-get autoremove --purge -y || true
+
+# 2. Geçici Dosyaları ve Günlükleri Temizle
+rm -rf /var/lib/apt/lists/*
+rm -rf /var/cache/apt/archives/*
+rm -rf /tmp/* /var/tmp/*
+rm -rf /var/log/*.log /var/log/journal/*
+
+# 3. /etc/resolv.conf Temizliği (Canlı ortam ağ yöneticisi sıfırdan oluştursun)
+truncate -s 0 /etc/resolv.conf 2>/dev/null || true
+
+echo ">> [ParsLinux Hook] 0990: Temizlik tamamlandı."

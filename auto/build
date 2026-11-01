@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux live-build auto/build betiği
+# Canlı ISO kalıbını derler ve eş zamanlı olarak build.log kütüğüne kaydeder
+# ==============================================================================
+
+echo "=========================================================="
+echo ">> [ParsLinux] live-build Derleme Süreci Başlıyor (lb build)"
+echo ">> Başlangıç Zamanı: $(date '+%Y-%m-%d %H:%M:%S')"
+echo "=========================================================="
+
+lb build noauto "${@}" 2>&1 | tee build.log
+
+echo "=========================================================="
+echo ">> [ParsLinux] Derleme Tamamlandı!"
+echo ">> Bitiş Zamanı    : $(date '+%Y-%m-%d %H:%M:%S')"
+echo ">> ISO ve Log      : $(ls -lh *.iso 2>/dev/null || echo 'ISO oluşturulamadı veya henüz taşınmadı') | build.log"
+echo "=========================================================="

@@ -1,0 +1,31 @@
+# ==============================================================================
+# ParsLinux Canlı Sistem - Geniş Donanım ve Kablosuz Ağ Donanım Yazılımları
+# Modern dizüstü ve masaüstü bilgisayarlarda Wi-Fi, Bluetooth, GPU ve ses donanımlarının
+# canlı ortamda doğrudan tanınmasını sağlar.
+# ==============================================================================
+
+# Çekirdek Donanım Yazılımları
+firmware-linux
+firmware-linux-free
+firmware-linux-nonfree
+firmware-misc-nonfree
+
+# Kablosuz Ağ Kartları (Wi-Fi)
+firmware-iwlwifi
+firmware-realtek
+firmware-atheros
+firmware-brcm80211
+firmware-libertas
+firmware-ralink
+firmware-ti-connectivity
+firmware-zd1211
+
+# Bluetooth Donanım Yazılımları
+bluez-firmware
+
+# Ses Kartı Donanım Yazılımları (Intel/AMD SOF vb.)
+firmware-sof-signed
+
+# İşlemci Mikro Kod Güncellemeleri
+intel-microcode
+amd64-microcode

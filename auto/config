@@ -1,0 +1,54 @@
+#!/bin/sh
+set -e
+
+# ==============================================================================
+# ParsLinux live-build auto/config betiği
+# ParsLinux 26.04 LTS (Noble Pars) GNOME Canlı ISO Kalıbı Yapılandırması
+# ==============================================================================
+
+DISTRIBUTION="${DISTRIBUTION:-bookworm}"
+ARCH="${ARCH:-amd64}"
+IMAGE_NAME="${IMAGE_NAME:-ParsLinux-26.04-gnome-amd64}"
+ISO_VOLUME="${ISO_VOLUME:-PARSLINUX_LIVE}"
+ISO_APP="${ISO_APP:-ParsLinux 26.04 LTS GNOME Live/Installer}"
+ISO_PUB="${ISO_PUB:-ParsLinux Team <https://parslinux.org>}"
+
+echo "=========================================================="
+echo ">> [ParsLinux] live-build Yapılandırması Başlatılıyor"
+echo ">> Dağıtım Tabanı : Debian ${DISTRIBUTION}"
+echo ">> Mimari         : ${ARCH}"
+echo ">> Çıktı Kalıbı   : ${IMAGE_NAME}.iso"
+echo ">> Hedef Masaüstü : pars-desktop-gnome"
+echo "=========================================================="
+
+lb config noauto \
+    --mode debian \
+    --system live \
+    --distribution "${DISTRIBUTION}" \
+    --architectures "${ARCH}" \
+    --binary-images iso-hybrid \
+    --archive-areas "main contrib non-free non-free-firmware" \
+    --parent-archive-areas "main contrib non-free non-free-firmware" \
+    --image-name "${IMAGE_NAME}" \
+    --iso-application "${ISO_APP}" \
+    --iso-publisher "${ISO_PUB}" \
+    --iso-volume "${ISO_VOLUME}" \
+    --bootloader "syslinux,grub-efi" \
+    --bootappend-live "boot=live components quiet splash splash-theme=parslinux persistence-encryption=luks hostname=parslinux username=pars user-fullname='ParsLinux Canli Kullanici' locales=tr_TR.UTF-8,en_US.UTF-8 keyboard-layouts=tr,us timezone=Europe/Istanbul" \
+    --bootappend-live-failsafe "boot=live components memtest noapic noapm nodma nomce nolapic nomodeset nosmp vga=normal" \
+    --linux-flavours "${ARCH}" \
+    --linux-packages "linux-image" \
+    --memtest "memtest86+" \
+    --security true \
+    --updates true \
+    --backports false \
+    --apt apt \
+    --apt-indices true \
+    --apt-recommends true \
+    --apt-secure true \
+    --win32-loader false \
+    --source false \
+    --checksums sha256 \
+    "${@}"
+
+echo ">> [ParsLinux] auto/config başarıyla tamamlandı."

@@ -1,0 +1,12 @@
+# ==============================================================================
+# ParsLinux APT Sabitleme (Pinning / Önceliklendirme)
+# ParsLinux depolarından gelen özelleştirilmiş paketlere en yüksek önceliği verir
+# ==============================================================================
+
+Package: pars-* parslinux-*
+Pin: origin repo.parslinux.org
+Pin-Priority: 999
+
+Package: *
+Pin: origin repo.parslinux.org
+Pin-Priority: 900

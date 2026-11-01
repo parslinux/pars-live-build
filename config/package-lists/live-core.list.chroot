@@ -1,0 +1,95 @@
+# ==============================================================================
+# ParsLinux Canlı Sistem - Canlı Açılış ve Çekirdek Sistem Servisleri
+# ==============================================================================
+
+# Canlı Oturum ve Açılış Motoru
+live-boot
+live-config
+live-config-systemd
+live-tools
+user-setup
+sudo
+systemd-sysv
+
+# Donanım, Ağ ve Bağlantı Yöneticisi
+network-manager
+network-manager-gnome
+modemmanager
+wireless-tools
+wpasupplicant
+bluez
+bluez-tools
+
+# Ses ve Multimedya Altyapısı (PipeWire Modern Ses Sunucusu)
+pipewire
+pipewire-audio-client-libraries
+pipewire-pulse
+pipewire-alsa
+wireplumber
+libspa-0.2-bluetooth
+alsa-utils
+
+# Ekran Sunucusu ve Görüntü Yöneticisi
+xorg
+xwayland
+gdm3
+gnome-shell
+gnome-session
+
+# Yerelleştirme, Zaman ve Sertifikalar
+locales
+tzdata
+ca-certificates
+gnupg
+libnss-myhostname
+
+# Temel Sistem ve Uçbirim Araçları
+bash-completion
+curl
+wget
+git
+nano
+vim-tiny
+htop
+fastfetch
+pciutils
+usbutils
+lshw
+inxi
+policykit-1
+pkexec
+
+# Dosya Sistemleri ve Disk Yönetim Araçları
+e2fsprogs
+dosfstools
+ntfs-3g
+btrfs-progs
+xfsprogs
+f2fs-tools
+exfat-fuse
+exfatprogs
+parted
+gparted
+smartmontools
+util-linux
+udisks2
+gvfs
+gvfs-backends
+gvfs-fuse
+
+# Arşiv ve Sıkıştırma Motorları
+tar
+gzip
+bzip2
+xz-utils
+zstd
+zip
+unzip
+p7zip-full
+squashfs-tools
+rsync
+
+# Açılış ve Plymouth Teması
+plymouth
+plymouth-themes
+plymouth-label

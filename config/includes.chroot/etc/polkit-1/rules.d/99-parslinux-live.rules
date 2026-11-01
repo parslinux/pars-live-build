@@ -1,0 +1,28 @@
+/* ==============================================================================
+ * ParsLinux Canlı Oturum PolicyKit Kuralı
+ * 'pars' canlı kullanıcısının disk işlemleri, kurulum sihirbazı ve sistem
+ * ayarlarını şifre sormadan doğrudan yönetebilmesini sağlar.
+ * ============================================================================== */
+
+polkit.addRule(function(action, subject) {
+    if (subject.user === "pars" || subject.isInGroup("sudo")) {
+        // Disk yönetimi ve formatlama
+        if (action.id.indexOf("org.freedesktop.udisks2.") === 0) {
+            return polkit.Result.YES;
+        }
+        // ParsLinux Kurulum Sihirbazı & Sistem Araçları
+        if (action.id.indexOf("org.parslinux.") === 0) {
+            return polkit.Result.YES;
+        }
+        // Paket ve Repo İşlemleri
+        if (action.id.indexOf("org.debian.apt.") === 0 || 
+            action.id.indexOf("org.freedesktop.packagekit.") === 0) {
+            return polkit.Result.YES;
+        }
+        // Genel yönetimsel komutlar (GParted vb.)
+        if (action.id === "org.gnome.gparted" || 
+            action.id === "org.freedesktop.policykit.exec") {
+            return polkit.Result.YES;
+        }
+    }
+});
