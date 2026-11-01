@@ -1,9 +1,9 @@
 ================================================================================
-                    ParsLinux 26.04 LTS (Noble Pars)
+                    ParsLinux 0.1
                    Resmi Canlı ve Kurulum Medyası (ISO)
 ================================================================================
 
-Tebrikler! ParsLinux 26.04 LTS resmi kurulum ve canlı çalışma ortamını içeren
+Tebrikler! ParsLinux 0.1 resmi kurulum ve canlı çalışma ortamını içeren
 USB/DVD medyasına erişmektesiniz.
 
 Özellikler:

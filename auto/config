@@ -3,14 +3,14 @@ set -e
 
 # ==============================================================================
 # ParsLinux live-build auto/config betiği
-# ParsLinux 26.04 LTS (Noble Pars) GNOME Canlı ISO Kalıbı Yapılandırması
+# ParsLinux 0.1 GNOME Canlı ISO Kalıbı Yapılandırması
 # ==============================================================================
 
 DISTRIBUTION="${DISTRIBUTION:-bookworm}"
 ARCH="${ARCH:-amd64}"
-IMAGE_NAME="${IMAGE_NAME:-ParsLinux-26.04-gnome-amd64}"
+IMAGE_NAME="${IMAGE_NAME:-ParsLinux-0.1-gnome-amd64}"
 ISO_VOLUME="${ISO_VOLUME:-PARSLINUX_LIVE}"
-ISO_APP="${ISO_APP:-ParsLinux 26.04 LTS GNOME Live/Installer}"
+ISO_APP="${ISO_APP:-ParsLinux 0.1 GNOME Live/Installer}"
 ISO_PUB="${ISO_PUB:-ParsLinux Team <https://parslinux.org>}"
 
 echo "=========================================================="

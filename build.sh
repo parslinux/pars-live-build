@@ -16,7 +16,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo -e "${BLUE}==========================================================${NC}"
-echo -e "${BLUE}  🐆 ParsLinux 26.04 LTS (Noble Pars) - Canlı ISO Derleme  ${NC}"
+echo -e "${BLUE}  🐆 ParsLinux 0.1 - Canlı ISO Derleme  ${NC}"
 echo -e "${BLUE}==========================================================${NC}"
 
 # 1. Root / Sudo Yetkisi Denetimi

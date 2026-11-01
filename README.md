@@ -1,6 +1,6 @@
-# 🛠️ ParsLinux 26.04 LTS (Noble Pars) - Canlı ISO Üretim Altyapısı (`live-build`)
+# 🛠️ ParsLinux 0.1 - Canlı ISO Üretim Altyapısı (`live-build`)
 
-Bu dizin, **ParsLinux 26.04 LTS** dağıtımının resmi canlı (Live) ve kurulum (Installer) USB ISO kalıbını (`ParsLinux-26.04-gnome-amd64.iso`) sıfırdan derlemek için yapılandırılmış profesyonel **Debian `live-build`** altyapısını içerir.
+Bu dizin, **ParsLinux 0.1** dağıtımının resmi canlı (Live) ve kurulum (Installer) USB ISO kalıbını (`ParsLinux-0.1-gnome-amd64.iso`) sıfırdan derlemek için yapılandırılmış profesyonel **Debian `live-build`** altyapısını içerir.
 
 ---
 
@@ -44,7 +44,7 @@ live-build/
 │   ├── includes.binary/                # Doğrudan ISO kök dizinine yerleştirilen dosyalar (.disk/info, README)
 │   ├── includes.chroot/                # Canlı sistem kök dizinine (/etc, /usr vb.) bindirilen dosyalar
 │   │   └── etc/
-│   │       ├── os-release              # ParsLinux 26.04 LTS kimlik dosyası
+│   │       ├── os-release              # ParsLinux 0.1 kimlik dosyası
 │   │       ├── gdm3/daemon.conf        # Canlı kullanıcı 'pars' için otomatik giriş
 │   │       ├── live/config.conf.d/     # Canlı kullanıcı, dil (tr_TR) ve saat ayarları
 │   │       ├── polkit-1/rules.d/       # Şifresiz kurulum sihirbazı ve disk izinleri
@@ -102,7 +102,7 @@ sudo ./build.sh
 
 ## 🧪 ISO Kalıbını Sanal Makinede Test Etme
 
-Derleme tamamlandığında çalışma dizininde **`ParsLinux-26.04-gnome-amd64.iso`** dosyası oluşacaktır.
+Derleme tamamlandığında çalışma dizininde **`ParsLinux-0.1-gnome-amd64.iso`** dosyası oluşacaktır.
 
 QEMU / KVM ile anında test etmek için:
 ```bash
@@ -112,6 +112,6 @@ qemu-system-x86_64 \
     -smp 4 \
     -vga virtio \
     -display gtk \
-    -cdrom ParsLinux-26.04-gnome-amd64.iso \
+    -cdrom ParsLinux-0.1-gnome-amd64.iso \
     -boot d
 ```

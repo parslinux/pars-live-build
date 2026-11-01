@@ -17,7 +17,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
 echo -e "${BLUE}==========================================================${NC}"
-echo -e "${BLUE}  🐆 ParsLinux 26.04 LTS - Konteyner Canlı ISO Derleyici  ${NC}"
+echo -e "${BLUE}  🐆 ParsLinux 0.1 - Konteyner Canlı ISO Derleyici  ${NC}"
 echo -e "${BLUE}==========================================================${NC}"
 
 # Konteyner motoru tespiti (Docker veya Podman)

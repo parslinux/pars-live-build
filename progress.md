@@ -1,12 +1,12 @@
 # 📊 ParsLinux live-build - İlerleme ve Durum Raporu (progress.md)
 
-Bu belge, **ParsLinux 26.04 LTS (Noble Pars) Canlı ISO Üretim Altyapısı (`live-build`)** projesinin tamamlanan aşamalarını ve hedeflerini özetler.
+Bu belge, **ParsLinux 0.1 Canlı ISO Üretim Altyapısı (`live-build`)** projesinin tamamlanan aşamalarını ve hedeflerini özetler.
 
 ---
 
 ## 📌 Genel Durum Özeti
 * **Proje:** ParsLinux Canlı ISO Üretim Mimarisi (`live-build`)
-* **Hedef Sürüm:** ParsLinux 26.04 LTS (Noble Pars)
+* **Hedef Sürüm:** ParsLinux 0.1
 * **Temel Altyapı:** Debian `live-build`, Linux kernel amd64, GRUB EFI / Isolinux
 * **Masaüstü Bağlantısı:** `pars-desktop-gnome`
 * **Kurulum Aracı:** `pars-setup` (Calamares tarzı GTK4/Libadwaita arayüz)
@@ -62,4 +62,4 @@ Bu belge, **ParsLinux 26.04 LTS (Noble Pars) Canlı ISO Üretim Altyapısı (`li
 
 ## 🔮 Sıradaki Adımlar (Master Fork Planı)
 - [x] Hazırlanan `.deb` paketlerinin GitHub Pages resmi APT deposunda toplanması ve doğrulanması (`https://parslinux.github.io/apt_repo`).
-- [ ] `docker-build.sh` veya `build.sh` ile ilk `ParsLinux-26.04-gnome-amd64.iso` kalıbının derlenmesi ve test edilmesi.
+- [ ] `docker-build.sh` veya `build.sh` ile ilk `ParsLinux-0.1-gnome-amd64.iso` kalıbının derlenmesi ve test edilmesi.
